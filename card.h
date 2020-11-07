@@ -2,9 +2,10 @@
 
 class Card {
  public:
+  Card();
   Card(std::string name, bool gwang, bool yeolkkeut, bool godori, int pi, std::string _tti);
-  void setCard(std::string name, bool gwang, bool yeolkkeut, bool godori, int pi, std::string _tti);
-  CardInfo getCardInfo();    // 카드의 정보(id를 제외한 모든 필드)를 구조체 형태로 반환
+  void SetCard(std::string name, bool gwang, bool yeolkkeut, bool godori, int pi, std::string _tti);
+  CardInfo GetCardInfo();    // 카드의 정보(id를 제외한 모든 필드)를 구조체 형태로 반환
   std::string ToString();    // 카드의 아이디와 카드의 이름을 공백 기준으로 구분한 문자열을 반환
  private:
   int _id;                   // 카드 구분을 위한 카드 id 만드는 순서대로 1부터 숫자 부여

@@ -2,10 +2,10 @@
 #include <string>
 
 Card::Card(std::string name, bool gwang, bool yeolkkeut, bool godori, int pi, std::string tti) {
-  setCard(name, gwang, yeolkkeut, godori, pi, _tti);
+  SetCard(name, gwang, yeolkkeut, godori, pi, _tti);
 }
 
-void Card::setCard(std::string name, bool gwang, bool yeolkkeut, bool godori, int pi, std::string tti) {
+void Card::SetCard(std::string name, bool gwang, bool yeolkkeut, bool godori, int pi, std::string tti) {
   _name = name;
   _gwang = gwang;
   _yeolkkeut = yeolkkeut;
@@ -14,7 +14,7 @@ void Card::setCard(std::string name, bool gwang, bool yeolkkeut, bool godori, in
   _tti = tti;
 }
 
-CardInfo Card::getCardInfo() {
+CardInfo Card::GetCardInfo() {
   CardInfo card_info;
   
   card_info.name = _name;
