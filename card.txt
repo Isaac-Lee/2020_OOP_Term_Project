@@ -1,4 +1,148 @@
-송학 광
+송학 일광
+true 
+false 
+false 
+false 
+false 
+싸리 초단
+false
+false
+false
+false
+Cho Dan
+싸리 멧돼지
+false
+true
+false
+false
+false
+싸리 싸리1
+false
+false
+false
+1
+false
+싸리 싸리2
+false
+false
+false
+1
+false
+억새 기러기
+false
+true
+true
+false
+false
+억새 팔광
+true
+false
+false
+false
+false
+억새 억새1
+false
+false
+false
+1
+false
+억새 억새2
+false
+false
+false
+1
+false
+국화 청단
+false
+false
+false
+false
+Cheong Dan
+국화 사카즈키
+false
+true
+false
+false
+false
+국화 국화1
+false
+false
+false
+1
+false
+국화 국화2
+false
+false
+false
+1
+false
+단풍 청단
+false
+false
+false
+false
+Cheong Dan
+단풍 사슴
+false
+true
+false
+false
+false
+단풍 단풍1
+false
+false
+false
+1
+false
+단풍 단풍2
+false
+false
+false
+1
+false
+오동 쌍피
+false
+false
+false
+2
+false
+오동 똥광
+true
+false
+false
+false
+false
+오동 오동1
+false
+false
+false
+1
+false
+오동 오동2
+false
+false
+false
+1
+false
+버들 쌍피
+false
+false
+false
+2
+false
+버들 초단
+false
+false
+false
+false
+Cho Dan
+버들 제비
+false
+true
+true
+false
+false
+버들 비광
 true
 false
 false
