@@ -1,5 +1,7 @@
 #include <iostream>
 
+struct CardInfo;
+
 class Card {
  public:
   Card();
