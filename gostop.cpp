@@ -1,10 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "card.h"
 #include <locale>
 #include <list>
 #include <cstring>
+#include "card.h"
+
 int main(void)
 {
   // TODO
@@ -65,7 +66,7 @@ int main(void)
           if(input5.compare("1") == 0){ 
           pi = 1;
         } else{
-          pi = 0;
+          pi = 2;
         }
       }
 
