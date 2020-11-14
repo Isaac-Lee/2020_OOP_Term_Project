@@ -1,8 +1,19 @@
 #include "card.h"
+#include <set>
 
 int main(int argc, char const *argv[])
 {
-  Card cards[48];
+  std::set<Card> cards;
+  Card* card = new Card("test_card", false, false, false, 100, "test_tti");
+  CardInfo ci;
+  ci = card->GetCardInfo();
+
+  std::cout << ci.name << std::endl;
+  std::cout << ci.gwang << std::endl;
+  std::cout << ci.godori << std::endl;
+  std::cout << ci.yeolkkeut << std::endl;
+  std::cout << ci.pi << std::endl;
+  std::cout << ci.tti << std::endl;
   // TODO
   // card.txt 파일에 순서 대로 name, gwang, yeolkkeut, godori, pi, _tti를 개행문자로 나누어서 작성
   // 예시로 하나 작성해둠.
