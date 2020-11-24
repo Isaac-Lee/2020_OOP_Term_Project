@@ -8,11 +8,6 @@
 
 int main(void)
 {
-  // TODO
-  // card.txt 파일에 순서 대로 name, gwang, gyeolkkeut, godori, pi, _tti를 개행문자로 나누어서 작성
-  // 예시로 하나 작성해둠.
-  // 이 gostop.cpp 파일에 해당 card.txt 파일을 읽어서 카드 정보를 카드 객체로 만들어서 리스트에 넣는 코드 작성
-  // for문 써써 파일 입력 받으시면 됩니다. 카드 id는 그냥 for문 돌리면서 사용하는 i로 작성
   std::list<Card*> cardList; // 카드 리스트
 
   std::ifstream readFile;
@@ -54,14 +49,14 @@ int main(void)
 
       std::getline(readFile, input4); 
       if(input4.compare("true") == 0){ 
-        godori = true; //true일경우 광은 true
+        godori = true; //true일경우 고도리는 true
       } else{
         godori = false;
       }
 
       std::getline(readFile, input5); //피를 읽어온다
       if(input5.compare("false") == 0){ 
-        pi = 0; //false일 경우 피는 0?
+        pi = 0; //false일 경우 피는 0
       } else{
           if(input5.compare("1") == 0){ 
           pi = 1;
@@ -79,10 +74,10 @@ int main(void)
 
       std::cout << name << gwang << gyeolkkeut << godori << pi << tti <<std::endl;
       //출력 확인
-    //  Card* card = new Card(name, gwang, gyeolkkeut, godori, pi, tti);
-    //  CardInfo ci;
-    //  ci = card->GetCardInfo();
-    //  cardList.push_back(card);
+      //  Card* card = new Card(name, gwang, gyeolkkeut, godori, pi, tti);
+      //  CardInfo ci;
+      //  ci = card->GetCardInfo();
+      //  cardList.push_back(card);
     }
     readFile.close(); //파일 닫아줍니다.
   }
