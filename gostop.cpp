@@ -3,13 +3,9 @@
 #include <string>
 #include <locale>
 #include <list>
-#include <cstring>
-#include "card.h"
+#include "player.h"
 
-int main(void)
-{
-  std::list<Card*> cardList; // 카드 리스트
-
+void initCard(std::string path, std::list<Card*> &cardlist, bool debug) {
   std::ifstream readFile;
   readFile.open("card.txt"); //파일 열기
   if (readFile.is_open())
@@ -72,14 +68,37 @@ int main(void)
         tti = input6;
       }
 
-      std::cout << name << gwang << gyeolkkeut << godori << pi << tti <<std::endl;
+      if (debug) {
+        std::cout << name << gwang << gyeolkkeut << godori << pi << tti <<std::endl;
+      }
       //출력 확인
-      //  Card* card = new Card(name, gwang, gyeolkkeut, godori, pi, tti);
-      //  CardInfo ci;
-      //  ci = card->GetCardInfo();
-      //  cardList.push_back(card);
+      Card* card = new Card(name, gwang, gyeolkkeut, godori, pi, tti);
+      // CardInfo ci;
+      // ci = card->getCardInfo();
+      cardlist.push_back(card);
     }
     readFile.close(); //파일 닫아줍니다.
   }
+}
+
+// TODO
+// 게임 시작 세팅을 해주는 함수
+// 게임 규칙대로 플레이어가 카드를 내는지 확인
+// 카드를 냈을때 일어나는 일들 구현하는 함수
+// 게임의 종료를 구하는 함수
+
+// 승리 판별기
+// 점수 계산하는 함수 만들어야함
+// 돈 계산 해주는 함수 - 승자의 점수를 따라 돈 계산
+// 플레이어 탈주시 갖고 있는 돈을 다른 플레이어에게 나눠주는 함수
+
+// 고랑 스톱이 가능한지 출력하는 함수
+// 게임 진행시 진행상황을 사용자에게 보여주는 함수
+
+int main(void)
+{
+  std::list<Card*> cardList; // 카드 리스트
+  initCard("card.txt", cardList, false);
+
   return 0;
 }
