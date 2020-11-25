@@ -11,6 +11,8 @@ PlayerInfo Player::GetPlayerInfo() {
   player_info.hand_ = hand_;
   player_info.money_ = money_;
   player_info.isPlaying_ = isPlaying_;
+
+  return player_info;
 }
 
 bool Player::isBroke() {
@@ -35,4 +37,15 @@ void Player::LoseMoney(int amount) {
 
 void Player::WinMoney(int amount) {
   this->money_ += amount;
+}
+
+void Player::UpScore(int amount) {
+  this->score_ += amount;
+}
+
+void Player::DownScore(int amount) {
+  if (score_ - amount < 0) {
+    this->score_ = 0;
+  }
+  this->score_ -= amount;
 }

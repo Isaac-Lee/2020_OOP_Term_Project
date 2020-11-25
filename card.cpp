@@ -5,7 +5,7 @@ Card::Card(std::string name, bool gwang, bool yeolkkeut, bool godori, int pi, st
   SetCard(name, gwang, yeolkkeut, godori, pi, tti);
 }
 
-void Card::SetCard(std::string name, bool gwang, bool yeolkkeut, bool godori, int pi, std::string tti) {
+void Card::setCard(std::string name, bool gwang, bool yeolkkeut, bool godori, int pi, std::string tti) {
   name_ = name;
   gwang_ = gwang;
   yeolkkeut_ = yeolkkeut;
@@ -14,7 +14,7 @@ void Card::SetCard(std::string name, bool gwang, bool yeolkkeut, bool godori, in
   tti_ = tti;
 }
 
-CardInfo Card::GetCardInfo() {
+CardInfo Card::getCardInfo() {
   CardInfo card_info;
   
   card_info.name = name_;
@@ -27,6 +27,6 @@ CardInfo Card::GetCardInfo() {
   return card_info;
 }
 
-std::string Card::ToString() {
-  return name_ + " " + std::to_string(id_);
+std::string Card::toString() {
+  return name_;
 }

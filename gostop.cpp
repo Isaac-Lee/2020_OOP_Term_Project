@@ -1,9 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <locale>
-#include <list>
-#include "player.h"
+#include "operator.h"
 
 void initCard(std::string path, std::list<Card*> &cardlist, bool debug) {
   std::ifstream readFile;
