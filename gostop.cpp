@@ -1,19 +1,9 @@
 #include <iostream>
 #include <fstream>
-#include <string>
-#include "card.h"
 #include <locale>
-#include <list>
-#include <cstring>
-int main(void)
-{
-  // TODO
-  // card.txt 파일에 순서 대로 name, gwang, gyeolkkeut, godori, pi, _tti를 개행문자로 나누어서 작성
-  // 예시로 하나 작성해둠.
-  // 이 gostop.cpp 파일에 해당 card.txt 파일을 읽어서 카드 정보를 카드 객체로 만들어서 리스트에 넣는 코드 작성
-  // for문 써써 파일 입력 받으시면 됩니다. 카드 id는 그냥 for문 돌리면서 사용하는 i로 작성
-  std::list<Card*> cardList; // 카드 리스트
+#include "operator.h"
 
+void initCard(std::string path, std::list<Card*> &cardlist, bool debug) {
   std::ifstream readFile;
   readFile.open("card.txt"); //파일 열기
   if (readFile.is_open())
@@ -53,19 +43,19 @@ int main(void)
 
       std::getline(readFile, input4); 
       if(input4.compare("true") == 0){ 
-        godori = true; //true일경우 광은 true
+        godori = true; //true일경우 고도리는 true
       } else{
         godori = false;
       }
 
       std::getline(readFile, input5); //피를 읽어온다
       if(input5.compare("false") == 0){ 
-        pi = 0; //false일 경우 피는 0?
+        pi = 0; //false일 경우 피는 0
       } else{
           if(input5.compare("1") == 0){ 
           pi = 1;
         } else{
-          pi = 0;
+          pi = 2;
         }
       }
 
@@ -76,14 +66,37 @@ int main(void)
         tti = input6;
       }
 
-      std::cout << name << gwang << gyeolkkeut << godori << pi << tti <<std::endl;
+      if (debug) {
+        std::cout << name << gwang << gyeolkkeut << godori << pi << tti <<std::endl;
+      }
       //출력 확인
-    //  Card* card = new Card(name, gwang, gyeolkkeut, godori, pi, tti);
-    //  CardInfo ci;
-    //  ci = card->GetCardInfo();
-    //  cardList.push_back(card);
+      Card* card = new Card(name, gwang, gyeolkkeut, godori, pi, tti);
+      // CardInfo ci;
+      // ci = card->getCardInfo();
+      cardlist.push_back(card);
     }
     readFile.close(); //파일 닫아줍니다.
   }
+}
+
+// TODO
+// 게임 시작 세팅을 해주는 함수
+// 게임 규칙대로 플레이어가 카드를 내는지 확인
+// 카드를 냈을때 일어나는 일들 구현하는 함수
+// 게임의 종료를 구하는 함수
+
+// 승리 판별기
+// 점수 계산하는 함수 만들어야함
+// 돈 계산 해주는 함수 - 승자의 점수를 따라 돈 계산
+// 플레이어 탈주시 갖고 있는 돈을 다른 플레이어에게 나눠주는 함수
+
+// 고랑 스톱이 가능한지 출력하는 함수
+// 게임 진행시 진행상황을 사용자에게 보여주는 함수
+
+int main(void)
+{
+  std::list<Card*> cardList; // 카드 리스트
+  initCard("card.txt", cardList, false);
+
   return 0;
 }

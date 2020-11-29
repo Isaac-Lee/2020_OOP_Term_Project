@@ -1,148 +1,291 @@
-¼ÛÇĞ ÀÏ±¤
+ì†¡í•™ ì¼ê´‘
 true 
 false 
 false 
 false 
+<<<<<<< HEAD
 false 
-½Î¸® ÃÊ´Ü
+ì‹¸ë¦¬ ì´ˆë‹¨
+=======
+false
+?â‰«ë¸° ?ë¾ë–’
+false
+false
+false
+false
+Hong Dan
+?â‰«ë¸° ?â‰«ë¸°1
+false
+false
+false
+1
+false
+?â‰«ë¸° ?â‰«ë¸°2
+false
+false
+false
+1
+false
+ï§ã…¼â€œ æ€¨ì¢Šë£„ç”±?
+false
+false
+false
+false
+false
+ï§ã…¼â€œ ?ë¾ë–’
+false
+false
+false
+1
+Hong Dan
+ï§ã…¼â€œ ï§ã…¼â€œ1
+false
+false
+false
+1
+false
+ï§ã…¼â€œ ï§ã…¼â€œ2
+false
+false
+false
+1
+false
+è¸°ì‹°í™ ?ì‡¨í‚…
+true
+false
+false
+false
+false
+è¸°ì‹°í™ ?ë¾ë–’
+false
+false
+false
+false
+Hong Dan
+è¸°ì‹°í™ è¸°ì‹°í™1
+false
+false
+false
+1
+false
+è¸°ì‹°í™ è¸°ì‹°í™2
+false
+false
+false
+1
+false
+?ë¬’ë–¥ç”±?ç¥ëˆë–’
 false
 false
 false
 false
 Cho Dan
-½Î¸® ¸äµÅÁö
+?ë¬’ë–¥ç”±?æ€¨ì¢Šë£„ç”±?
+false
 false
 true
 false
 false
-false
-½Î¸® ½Î¸®1
-false
-false
-false
-1
-false
-½Î¸® ½Î¸®2
+?ë¬’ë–¥ç”±??ë¬’ë–¥ç”±?
 false
 false
 false
 1
 false
-¾ï»õ ±â·¯±â
-false
-true
-true
-false
-false
-¾ï»õ ÆÈ±¤
-true
-false
-false
-false
-false
-¾ï»õ ¾ï»õ1
+?ë¬’ë–¥ç”±??ë¬’ë–¥ç”±?
 false
 false
 false
 1
 false
-¾ï»õ ¾ï»õ2
-false
-false
-false
-1
-false
-±¹È­ Ã»´Ü
-false
-false
-false
-false
-Cheong Dan
-±¹È­ »çÄ«ÁîÅ°
-false
-true
-false
-false
-false
-±¹È­ ±¹È­1
-false
-false
-false
-1
-false
-±¹È­ ±¹È­2
-false
-false
-false
-1
-false
-´ÜÇ³ Ã»´Ü
-false
-false
-false
-false
-Cheong Dan
-´ÜÇ³ »ç½¿
-false
-true
-false
-false
-false
-´ÜÇ³ ´ÜÇ³1
-false
-false
-false
-1
-false
-´ÜÇ³ ´ÜÇ³2
-false
-false
-false
-1
-false
-¿Àµ¿ ½ÖÇÇ
-false
-false
-false
-2
-false
-¿Àµ¿ ¶Ë±¤
-true
-false
-false
-false
-false
-¿Àµ¿ ¿Àµ¿1
-false
-false
-false
-1
-false
-¿Àµ¿ ¿Àµ¿2
-false
-false
-false
-1
-false
-¹öµé ½ÖÇÇ
-false
-false
-false
-2
-false
-¹öµé ÃÊ´Ü
+?ì’–í¹ ç¥ëˆë–’
 false
 false
 false
 false
 Cho Dan
-¹öµé Á¦ºñ
+?ì’–í¹ ?ëŒ€ê±®
+false
+true
+false
+false
+false
+?ì’–í¹ ?ì’–í¹1
+false
+false
+false
+1
+false
+?ì’–í¹ ?ì’–í¹2
+false
+false
+false
+1
+false
+ï§â‘¤? ï§£?ë–’
+false
+false
+false
+false
+Cheong Dan
+ï§â‘¤? ?ëŒ€ê±®
+false
+true
+false
+false
+false
+ï§â‘¤? ï§â‘¤?1
+false
+false
+false
+1
+false
+ï§â‘¤? ï§â‘¤?2
+false
+false
+false
+1
+false
+?ëªƒâ” ç¥ëˆë–’
+>>>>>>> 23edf063838b284b4ed8d009f929060afe50c388
+false
+false
+false
+false
+Cho Dan
+ì‹¸ë¦¬ ë©§ë¼ì§€
+false
+true
+false
+false
+false
+ì‹¸ë¦¬ ì‹¸ë¦¬1
+false
+false
+false
+1
+false
+ì‹¸ë¦¬ ì‹¸ë¦¬2
+false
+false
+false
+1
+false
+ì–µìƒˆ ê¸°ëŸ¬ê¸°
 false
 true
 true
 false
 false
-¹öµé ºñ±¤
+ì–µìƒˆ íŒ”ê´‘
+true
+false
+false
+false
+false
+ì–µìƒˆ ì–µìƒˆ1
+false
+false
+false
+1
+false
+ì–µìƒˆ ì–µìƒˆ2
+false
+false
+false
+1
+false
+êµ­í™” ì²­ë‹¨
+false
+false
+false
+false
+Cheong Dan
+êµ­í™” ì‚¬ì¹´ì¦ˆí‚¤
+false
+true
+false
+false
+false
+êµ­í™” êµ­í™”1
+false
+false
+false
+1
+false
+êµ­í™” êµ­í™”2
+false
+false
+false
+1
+false
+ë‹¨í’ ì²­ë‹¨
+false
+false
+false
+false
+Cheong Dan
+ë‹¨í’ ì‚¬ìŠ´
+false
+true
+false
+false
+false
+ë‹¨í’ ë‹¨í’1
+false
+false
+false
+1
+false
+ë‹¨í’ ë‹¨í’2
+false
+false
+false
+1
+false
+ì˜¤ë™ ìŒí”¼
+false
+false
+false
+2
+false
+ì˜¤ë™ ë˜¥ê´‘
+true
+false
+false
+false
+false
+ì˜¤ë™ ì˜¤ë™1
+false
+false
+false
+1
+false
+ì˜¤ë™ ì˜¤ë™2
+false
+false
+false
+1
+false
+ë²„ë“¤ ìŒí”¼
+false
+false
+false
+2
+false
+ë²„ë“¤ ì´ˆë‹¨
+false
+false
+false
+false
+Cho Dan
+ë²„ë“¤ ì œë¹„
+false
+true
+true
+false
+false
+ë²„ë“¤ ë¹„ê´‘
 true
 false
 false
