@@ -79,6 +79,10 @@ void initCard(std::string path, std::list<Card*> &cardlist, bool debug) {
   }
 }
 
+void startGame() {} 
+void goOrStop() {}
+void whatCardPlayerHave(Player &player) {}
+
 // TODO
 // 게임 시작 세팅을 해주는 함수
 // 게임 규칙대로 플레이어가 카드를 내는지 확인
@@ -97,6 +101,18 @@ int main(void)
 {
   std::list<Card*> cardList; // 카드 리스트
   initCard("card.txt", cardList, false);
+
+  
+  // 처음 판을 깔기
+  // 플레이어 1부터 한명씩 돌아가면서 정보 입력 받기
+  // 한턴마다 돌아다가면서 카드를 내고, 카드더미에서 한장 뒤집는다
+  // 두 카드중에 바닥에 깔려있는것과 같은 종류가 있다면 그 두장을 거둔다
+  // 점수 계산
+  // 이간 사람 있는지 판별
+  // 이긴 사람이 없다면 다시 진행
+  // 이긴 사람이 있다면 고할지 스톱할지 알려준다.
+  // 고라면 고 카운트를 센다.
+  // 스톱이라면 점수 계산하고 다시 진행
 
   return 0;
 }
