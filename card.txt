@@ -1,153 +1,148 @@
 송학 일광
 true 
-false 
-false 
-false 
-<<<<<<< HEAD
-false 
-싸리 초단
-=======
 false
-?≫븰 ?띾떒
+false
+false
+false
+송학 홍단
 false
 false
 false
 false
 Hong Dan
-?≫븰 ?≫븰1
+송학 송학1
 false
 false
 false
 1
 false
-?≫븰 ?≫븰2
+송학 송학2
 false
 false
 false
 1
 false
-留ㅼ“ 怨좊룄由?
+매조 고도리
 false
 false
 false
 false
 false
-留ㅼ“ ?띾떒
+매조 홍단
 false
 false
 false
 1
 Hong Dan
-留ㅼ“ 留ㅼ“1
+매조 매조1
 false
 false
 false
 1
 false
-留ㅼ“ 留ㅼ“2
+매조 매조2
 false
 false
 false
 1
 false
-踰싰퐙 ?쇨킅
+벚꽃 삼광
 true
 false
 false
 false
 false
-踰싰퐙 ?띾떒
+벚꽃 홍단
 false
 false
 false
 false
 Hong Dan
-踰싰퐙 踰싰퐙1
+벚꽃 벚꽃1
 false
 false
 false
 1
 false
-踰싰퐙 踰싰퐙2
+벚꽃 벚꽃2
 false
 false
 false
 1
 false
-?묒떥由?珥덈떒
+흑싸리 초단
 false
 false
 false
 false
 Cho Dan
-?묒떥由?怨좊룄由?
+흑싸리 고도리
 false
 false
 true
 false
 false
-?묒떥由??묒떥由?
+흑싸리 흑싸리1
 false
 false
 false
 1
 false
-?묒떥由??묒떥由?
+흑싸리 흑싸리2
 false
 false
 false
 1
 false
-?쒖큹 珥덈떒
+난초 초단
 false
 false
 false
 false
 Cho Dan
-?쒖큹 ?대걮
+난초 열끗
 false
 true
 false
 false
 false
-?쒖큹 ?쒖큹1
+난초 난초1
 false
 false
 false
 1
 false
-?쒖큹 ?쒖큹2
+난초 난초2
 false
 false
 false
 1
 false
-紐⑤? 泥?떒
+모란 청단
 false
 false
 false
 false
 Cheong Dan
-紐⑤? ?대걮
+모란 열끗
 false
 true
 false
 false
 false
-紐⑤? 紐⑤?1
+모란 모란1
 false
 false
 false
 1
 false
-紐⑤? 紐⑤?2
+모란 모란2
 false
 false
 false
 1
 false
-?몃━ 珥덈떒
->>>>>>> 23edf063838b284b4ed8d009f929060afe50c388
+싸리 초단
 false
 false
 false
