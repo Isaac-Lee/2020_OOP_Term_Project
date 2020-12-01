@@ -49,3 +49,6 @@ void Player::DownScore(int amount) {
   }
   this->score_ -= amount;
 }
+void Player::draw(Card* c){
+  Player::hand_.push_back(c);
+}
