@@ -1,6 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <locale>
+#include <random>
+#include <iterator>
+#include <algorithm>
 #include "operator.h"
 
 void initCard(std::string path, std::list<Card*> &cardlist, bool debug) {
@@ -93,10 +96,29 @@ void initCard(std::string path, std::list<Card*> &cardlist, bool debug) {
 // 고랑 스톱이 가능한지 출력하는 함수
 // 게임 진행시 진행상황을 사용자에게 보여주는 함수
 
+std::list<Card*> fieldCard; //바닥 카드 리스트 -> 시작에 6장
+void setGame(std::list<Card*> cardList, std::vector<Player*> playerList){
+    std::random_device rd;
+    std::mt19937 g(rd());
+ 
+    std::shuffle(cardList.begin(), cardList.end(), g);
+    //덱 셔플
+    for(int i = 0; i < 6; i++){
+      fieldCard.push_back(cardList.front());
+      cardList.pop_front();
+      //바닥 필드에 카드 6개 삽입, 덱에서 6개 제거
+    }
+    for(int i = 0; i < 7; i++){ //총 7장
+      for(int j =0; j < 3; j++){ //총 3명
+        playerList[j]->draw(cardList.front()); //각각 카드를 뽑음
+        cardList.pop_front(); //덱에서 하나 제거
+      }
+    }
+}
 int main(void)
 {
   std::list<Card*> cardList; // 카드 리스트
   initCard("card.txt", cardList, false);
-
+  
   return 0;
 }
