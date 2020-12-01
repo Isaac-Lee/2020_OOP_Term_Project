@@ -79,9 +79,50 @@ void initCard(std::string path, std::list<Card*> &cardlist, bool debug) {
   }
 }
 
-void startGame() {} 
-void goOrStop() {}
-void whatCardPlayerHave(Player &player) {}
+void startGame() {
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << "********************** Game Satrt **********************" << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << "                                                    @@@@@@@@@@@@@@    " << std::endl;
+  std::cout << "      @@@@@@@@@@@@@@               @@,              @@@@@@@@@@@@@@    " << std::endl;
+  std::cout << "      @@@@@@@@@@@@@@               @@~              @@@               " << std::endl;
+  std::cout << "      @@@@@@@@@@@@@@               @@~              @@@               " << std::endl;
+  std::cout << "                 !@@              @@@@              @@@@@@@@@@@@@@    " << std::endl;
+  std::cout << "                 !@@             @@@@@@             @@@               " << std::endl;
+  std::cout << "                 *@@            @@@~ @@@            @@@@@@@@@@@@@@    " << std::endl;
+  std::cout << "                 =@@          @@@@:   @@@@          @@@@@@@@@@@@@@    " << std::endl;
+  std::cout << "          @@@    @@@       =@@@@@      @@@@@$             @@          " << std::endl;
+  std::cout << "          @@@    @@@       @@@@@        .@@@@             @@          " << std::endl;
+  std::cout << "          @@@    @@@        @              @     @@@@@@@@@@@@@@@@@@@@ " << std::endl;
+  std::cout << "          @@@    @@@                             @@@@@@@@@@@@@@@@@@@@ " << std::endl;
+  std::cout << "          @@@    @@@                                                  " << std::endl;
+  std::cout << "          @@@                                       @@@        @@@    " << std::endl;
+  std::cout << "          @@@                                       @@@@@@@@@@@@@@    " << std::endl;
+  std::cout << "   @@@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@@@@    " << std::endl;
+  std::cout << "   @@@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@@@@    " << std::endl;
+  std::cout << "   ~~~~~~~~~~~~~~~~~~~~                             @@@        @@@    " << std::endl;
+  std::cout << "                                                    @@@@@@@@@@@@@@    " << std::endl;
+  std::cout << "                                                    @@@@@@@@@@@@@@    " << std::endl;
+} 
+int goOrStop() {
+  int choice;
+  std::cout << "******  1. 못먹어도 고! / 2. 욕심은 금물 스톱!  ******" <<std::endl;
+  std::cout << "선택 : ";
+  std::cin >> choice;
+  return choice;
+}
+int pickCard(Player &player) {
+  PlayerInfo info = player.GetPlayerInfo();
+  std::list<Card*> hand = info.hand_;
+  for (int i = 0; i < hand.size(); i++) {
+    (*hand.begin()+i)->toString();
+  }
+}
+void earnCard() {
+  
+}
 
 // TODO
 // 게임 시작 세팅을 해주는 함수
