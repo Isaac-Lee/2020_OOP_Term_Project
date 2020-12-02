@@ -1,4 +1,4 @@
-#include <list>
+#include <vector>
 #include "card.h"
 
 // TODO 
@@ -17,20 +17,20 @@ class Player {
   void DownScore(int amount);                  // 점수를 빼는 함수
   void ResetScore();                           // 점수를 0으로 초기화 하는 함수 
   Card* CardPop(std::string card_name);        // 카드를 내는 함수
-  void EarnCard(std::list<Card*> cardList);    // 카드를 얻는 함수
+  void EarnCard(std::vector<Card*> cardList);    // 카드를 얻는 함수
   void draw(Card* c);
  private:
   std::string name_;          // 플레이어 이름
-  std::list<Card*> hand_;     // 플레이어가 손에 들고 있는 카드들
-  std::list<Card*> field_;    // 플레이어가 가지고 있는 카드들
+  std::vector<Card*> hand_;     // 플레이어가 손에 들고 있는 카드들
+  std::vector<Card*> field_;    // 플레이어가 가지고 있는 카드들
   bool isPlaying_;            // 플레이어가 플레이중인지
   int score_;                 // 플레이어의 점수
 };
 
 struct PlayerInfo {
   std::string name_;          // 플레이어 이름
-  std::list<Card*> hand_;     // 플레이어가 손에 들고 있는 카드들
-  std::list<Card*> field_;    // 플레이어가 가지고 있는 카드들
+  std::vector<Card*> hand_;     // 플레이어가 손에 들고 있는 카드들
+  std::vector<Card*> field_;    // 플레이어가 가지고 있는 카드들
   bool isPlaying_;            // 플레이어가 플레이중인지
   int score_;
 };
