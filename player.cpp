@@ -2,13 +2,14 @@
 #include <string>
 
 
-Player::Player(std::string name) : name_(name), isPlaying_(true) {};
+Player::Player(std::string name) : name_(name), money_(500), isPlaying_(true) {};
 
 PlayerInfo Player::GetPlayerInfo() {
   PlayerInfo player_info;
   
   player_info.name_ = name_;
   player_info.hand_ = hand_;
+  player_info.money_ = money_;
   player_info.isPlaying_ = isPlaying_;
 
   return player_info;
@@ -28,7 +29,6 @@ void Player::DownScore(int amount) {
   }
   this->score_ -= amount;
 }
-
-void Player::ResetScore() {
-  this->score_ = 0;
+void Player::draw(Card* c){
+  Player::hand_.push_back(c);
 }
