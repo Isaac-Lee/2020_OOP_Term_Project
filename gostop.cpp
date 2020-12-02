@@ -117,7 +117,7 @@ int pickCard(Player &player) {
   PlayerInfo info = player.GetPlayerInfo();
   std::list<Card*> hand = info.hand_;
   for (int i = 0; i < hand.size(); i++) {
-    (*hand.begin()+i)->toString();
+    (*hand.begin()+i)->toString(i);
   }
 }
 void earnCard() {
