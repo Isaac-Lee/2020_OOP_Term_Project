@@ -19,6 +19,7 @@ class Player {
   Card* CardPop(std::string card_name);        // 카드를 내는 함수
   void EarnCard(std::vector<Card*> cardList);    // 카드를 얻는 함수
   void draw(Card* c);
+  int current_score();                         // 현재 점수
  private:
   std::string name_;          // 플레이어 이름
   std::vector<Card*> hand_;     // 플레이어가 손에 들고 있는 카드들
