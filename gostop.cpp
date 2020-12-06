@@ -160,6 +160,22 @@ void setGame(std::vector<Card*> cardList, std::vector<Player*> playerList){
       }
     }
 }
+bool validateCard(std::vector<Card*> cardList, std::vector<Player*> playerList, Card* card, Player* player) {
+
+}
+void isGameOver(std::vector<Player*> playerList) {
+  int countPlayer = 0;
+    for(int i = 0; i < 3; i++){ //총 7장
+    if(playerList[i]->isPlaying() == true){ //플레이어가 게임중일 경우
+    countPlayer++; //플레이어 수 한명 증가
+    }  
+  }
+  if(countPlayer >=2) {
+    //게임 진행중
+  } else{
+    //플레이어가 한명또는 없으므로 게임 종료
+  }
+}
 int main(void)
 {
   std::vector<Card*> cardList; // 카드 리스트
