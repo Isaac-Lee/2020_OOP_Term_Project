@@ -186,8 +186,10 @@ void gameOperate(std::list<Card*> cardList, std::list<Player*> playerList, Card*
         break;
       }
       else if(PlayerList[0]->current_score() <= 3 && PlayerList[0] -> current_score() >= 0){
-        playerList[0]->draw(cardList.front()); //각각 카드를 뽑음
+        playerList[0]->draw(cardList.front()); //카드를 뽑아 손에 쥔 카드들 리스트에 추가
         cardList.pop_back(); //덱에서 하나 제거
+        //손에 쥔 카드 리스트 중 랜덤으로 하나를 빼고 바닥 카드리스트에 추가
+        //바닥 카드리스트에 있는 카드들끼리 비교하여 같은 종류의 카드가 존재시 점수 획득
       }
     }
 } 
