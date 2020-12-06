@@ -161,6 +161,24 @@ void setGame(std::vector<Card*> cardList, std::vector<Player*> playerList){
     }
     gameOperate(cardList, playerList, fieldCard, ); // 게임 진행(카드뽑기)
 }
+<<<<<<< HEAD
+bool validateCard(std::vector<Card*> cardList, std::vector<Player*> playerList, Card* card, Player* player) {
+
+}
+void isGameOver(std::vector<Player*> playerList) {
+  int countPlayer = 0;
+    for(int i = 0; i < 3; i++){ //총 7장
+    if(playerList[i]->isPlaying() == true){ //플레이어가 게임중일 경우
+    countPlayer++; //플레이어 수 한명 증가
+    }  
+  }
+  if(countPlayer >=2) {
+    //게임 진행중
+  } else{
+    //플레이어가 한명또는 없으므로 게임 종료
+  }
+}
+=======
 
 void gameOperate(std::list<Card*> cardList, std::list<Player*> playerList, Card* card, Player* player) {
     //게임진행 (player1부터 진행) - 무한반복(3점 날 때까지)
@@ -176,6 +194,7 @@ void gameOperate(std::list<Card*> cardList, std::list<Player*> playerList, Card*
     }
 } 
 
+>>>>>>> d2d3e2d996a5abdec4a4c686e8bf2bc9a251a96e
 int main(void)
 {
   std::vector<Card*> cardList; // 카드 리스트
