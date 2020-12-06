@@ -85,7 +85,7 @@ void initCard(std::string path, std::vector<Card*> &cardlist, bool debug) {
 void startGame() {
   std::cout << std::endl;
   std::cout << std::endl;
-  std::cout << "********************** Game Satrt **********************" << std::endl;
+  std::cout << "********************** Game Start **********************" << std::endl;
   std::cout << std::endl;
   std::cout << std::endl;
   std::cout << "                                                    @@@@@@@@@@@@@@    " << std::endl;
@@ -159,7 +159,12 @@ void setGame(std::vector<Card*> cardList, std::vector<Player*> playerList){
         cardList.pop_back(); //덱에서 하나 제거
       }
     }
+    //게임진행 (player1부터 진행)
+    while(true){
+
+    }
 }
+<<<<<<< HEAD
 bool validateCard(std::vector<Card*> cardList, std::vector<Player*> playerList, Card* card, Player* player) {
 
 }
@@ -176,6 +181,13 @@ void isGameOver(std::vector<Player*> playerList) {
     //플레이어가 한명또는 없으므로 게임 종료
   }
 }
+=======
+
+void gameOperate(std::list<Card*> cardList, std::list<Player*> playerList, Card* card, Player* player) {
+
+} 
+
+>>>>>>> d2d3e2d996a5abdec4a4c686e8bf2bc9a251a96e
 int main(void)
 {
   std::vector<Card*> cardList; // 카드 리스트
