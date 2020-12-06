@@ -159,14 +159,21 @@ void setGame(std::vector<Card*> cardList, std::vector<Player*> playerList){
         cardList.pop_back(); //덱에서 하나 제거
       }
     }
-    //게임진행 (player1부터 진행)
-    while(true){
-
-    }
+    gameOperate(cardList, playerList, fieldCard, ); // 게임 진행(카드뽑기)
 }
 
 void gameOperate(std::list<Card*> cardList, std::list<Player*> playerList, Card* card, Player* player) {
-
+    //게임진행 (player1부터 진행) - 무한반복(3점 날 때까지)
+    // 플레이어가 카드를 얻고 그 카드를 낼때 gameoperate 함수 실행
+    while(true){
+      if(PlayerList[0]->current_score() > 3){ // player1이 현재 점수가 3점이상일때
+        break;
+      }
+      else if(PlayerList[0]->current_score() <= 3 && PlayerList[0] -> current_score() >= 0){
+        playerList[0]->draw(cardList.front()); //각각 카드를 뽑음
+        cardList.pop_back(); //덱에서 하나 제거
+      }
+    }
 } 
 
 int main(void)
