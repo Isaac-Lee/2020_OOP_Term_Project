@@ -85,7 +85,7 @@ void initCard(std::string path, std::vector<Card*> &cardlist, bool debug) {
 void startGame() {
   std::cout << std::endl;
   std::cout << std::endl;
-  std::cout << "********************** Game Satrt **********************" << std::endl;
+  std::cout << "********************** Game Start **********************" << std::endl;
   std::cout << std::endl;
   std::cout << std::endl;
 } 
@@ -102,9 +102,6 @@ int pickCard(Player &player) {
   for (int i = 0; i < hand.size(); i++) {
     hand[i]->toString(i+1);
   }
-}
-void earnCard() {
-  
 }
 
 // TODO
@@ -139,7 +136,41 @@ void setGame(std::vector<Card*> cardList, std::vector<Player*> playerList){
         cardList.pop_back(); //덱에서 하나 제거
       }
     }
+    gameOperate(cardList, playerList); // 게임 진행(카드뽑기)
 }
+bool validateCard(std::vector<Card*> cardList, std::vector<Player*> playerList, Card* card, Player* player) {
+
+}
+void isGameOver(std::vector<Player*> playerList) {
+  int countPlayer = 0;
+    for(int i = 0; i < 3; i++){ //총 7장
+    if(playerList[i]->isPlaying() == true){ //플레이어가 게임중일 경우
+    countPlayer++; //플레이어 수 한명 증가
+    }  
+  }
+  if(countPlayer >=2) {
+    //게임 진행중
+  } else{
+    //플레이어가 한명또는 없으므로 게임 종료
+  }
+}
+
+void gameOperate(std::vector<Card*> cardList, std::vector<Player*> playerList) {
+    //게임진행 (player1부터 진행) - 무한반복(3점 날 때까지)
+    // 플레이어가 카드를 얻고 그 카드를 낼때 gameoperate 함수 실행
+    while(true){
+      if(playerList[0]->current_score() > 3){ // player1이 현재 점수가 3점이상일때
+        break;
+      }
+      else if(playerList[0]->current_score() <= 3 && playerList[0] -> current_score() >= 0){
+        playerList[0]->draw(cardList.front()); //카드를 뽑아 손에 쥔 카드들 리스트에 추가
+        cardList.pop_back(); //덱에서 하나 제거
+        //손에 쥔 카드 리스트 중 랜덤으로 하나를 빼고 바닥 카드리스트에 추가
+        //바닥 카드리스트에 있는 카드들끼리 비교하여 같은 종류의 카드가 존재시 점수 획득
+      }
+    }
+}
+
 int main(void)
 {
   std::vector<Card*> cardList; // 카드 리스트
