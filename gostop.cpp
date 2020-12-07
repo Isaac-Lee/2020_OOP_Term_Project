@@ -88,26 +88,6 @@ void startGame() {
   std::cout << "********************** Game Satrt **********************" << std::endl;
   std::cout << std::endl;
   std::cout << std::endl;
-  std::cout << "                                                    @@@@@@@@@@@@@@    " << std::endl;
-  std::cout << "      @@@@@@@@@@@@@@               @@,              @@@@@@@@@@@@@@    " << std::endl;
-  std::cout << "      @@@@@@@@@@@@@@               @@~              @@@               " << std::endl;
-  std::cout << "      @@@@@@@@@@@@@@               @@~              @@@               " << std::endl;
-  std::cout << "                 !@@              @@@@              @@@@@@@@@@@@@@    " << std::endl;
-  std::cout << "                 !@@             @@@@@@             @@@               " << std::endl;
-  std::cout << "                 *@@            @@@~ @@@            @@@@@@@@@@@@@@    " << std::endl;
-  std::cout << "                 =@@          @@@@:   @@@@          @@@@@@@@@@@@@@    " << std::endl;
-  std::cout << "          @@@    @@@       =@@@@@      @@@@@$             @@          " << std::endl;
-  std::cout << "          @@@    @@@       @@@@@        .@@@@             @@          " << std::endl;
-  std::cout << "          @@@    @@@        @              @     @@@@@@@@@@@@@@@@@@@@ " << std::endl;
-  std::cout << "          @@@    @@@                             @@@@@@@@@@@@@@@@@@@@ " << std::endl;
-  std::cout << "          @@@    @@@                                                  " << std::endl;
-  std::cout << "          @@@                                       @@@        @@@    " << std::endl;
-  std::cout << "          @@@                                       @@@@@@@@@@@@@@    " << std::endl;
-  std::cout << "   @@@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@@@@    " << std::endl;
-  std::cout << "   @@@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@@@@    " << std::endl;
-  std::cout << "   ~~~~~~~~~~~~~~~~~~~~                             @@@        @@@    " << std::endl;
-  std::cout << "                                                    @@@@@@@@@@@@@@    " << std::endl;
-  std::cout << "                                                    @@@@@@@@@@@@@@    " << std::endl;
 } 
 int goOrStop() {
   int choice;
