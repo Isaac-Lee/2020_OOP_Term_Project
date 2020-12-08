@@ -1,10 +1,8 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include <vector>
 #include "card.h"
-
-// TODO 
-// 탈주 가능하게 하는 함수 구현
-// 먹은 카드를 보관하는 곳
-// 고 스톱 상태를 나타내는 함수
 
 struct PlayerInfo;
 
@@ -35,3 +33,5 @@ struct PlayerInfo {
   bool isPlaying_;            // 플레이어가 플레이중인지
   int score_;
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef CARD_H
+#define CARD_H
+
 #include <string>
 
 struct CardInfo;
@@ -24,3 +27,5 @@ struct CardInfo {
   std::string tti;          // 띠의 종류를 한글을 로마자 표기로 작성
   std::string name;         // 카드의 이름 예) 송학 광, 송학 홍단, 송학 피1, 송학 피2
 };
+
+#endif
