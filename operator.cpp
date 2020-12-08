@@ -3,8 +3,7 @@
 
 class Operator {
  public:
-  static Operator& instance() {}; // singleton 디자인을 위한 것
-  void setGame(std::vector<Card*> cardList, std::vector<Player*> playerList, std::vector<Card*> fieldCard) {
+  void setGame(std::vector<Card*> cardList, std::vector<Player*> playerList,  std::vector<Card*> fieldCard) {
     std::random_device rd;
     std::mt19937 g(rd());
  
@@ -57,7 +56,7 @@ class Operator {
       //플레이어가 한명또는 없으므로 게임 종료
     }
   }
+
  private:
-  Operator() {} // 생성자
   static Operator* instanse_; // Operator instance, instance함수로 만들기
 };

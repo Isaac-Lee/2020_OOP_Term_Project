@@ -5,7 +5,6 @@
 
 class Operator {
  public:
-  static Operator& instance() {}; // singleton 디자인을 위한 것
   void setGame(std::vector<Card*> cardList, std::vector<Player*> playerList) {} // 첫 게임 셋팅을 위한 함수
   bool validateCard(std::vector<Card*> cardList, std::vector<Player*> playerList, Card* card, Player* player) {} // 플레이어가 카드를 정상적으로 냈는지 검사하는 함수
   void gameOperate(std::vector<Card*> cardList, std::vector<Player*> playerList) {} // 플레이어가 카드를 냈을때 일어나는 일들을 구현하는 함수
@@ -13,6 +12,5 @@ class Operator {
   // 점수 계산하는 로직은 calculator에 구현되어있으니 그냥 함수 사용
   void isGameOver(std::vector<Player*> playerList) {} // 게임이 종료됬는지 구하는 함수
  private:
-  Operator() {} // 생성자
-  static Operator* instanse_; // Operator instance, instance함수로 만들기
+  static Operator* instance_; // Operator instance, instance함수로 만들기
 };
