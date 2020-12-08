@@ -101,6 +101,7 @@ int pickCard(Player &player) {
   for (int i = 0; i < hand.size(); i++) {
     hand[i]->toString(i+1);
   }
+  return 0;
 }
 
 // TODO
@@ -123,8 +124,9 @@ int main(void)
   std::vector<Card*> fieldCard; //바닥 카드 리스트 -> 시작에 6장
   std::vector<Player*> plaerList; // 플레이어 리스트 -> 3명
   Operator gameOP;
-  Claculator gameCal;
-  
+  Calculator gameCal;
+
+  startGame();
   initCard("card.txt", cardList, false);
   
   // 처음 판을 깔기
