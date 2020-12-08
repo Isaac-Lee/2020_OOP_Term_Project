@@ -121,6 +121,10 @@ int main(void)
 {
   std::vector<Card*> cardList; // 카드 리스트
   std::vector<Card*> fieldCard; //바닥 카드 리스트 -> 시작에 6장
+  std::vector<Player*> plaerList; // 플레이어 리스트 -> 3명
+  Operator gameOP;
+  Claculator gameCal;
+  
   initCard("card.txt", cardList, false);
   
   // 처음 판을 깔기
