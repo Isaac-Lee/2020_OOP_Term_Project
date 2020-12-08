@@ -31,6 +31,16 @@
 
 
 ***
-컴파일 방법
-g++ -std=c++17 -c card.cpp -o card.o
-g++ -std=c++17 gostop.cpp card.o
+### 컴파일 방법
+```bash
+clang++ -std=c++17 -c card.cpp -o card.o
+clang++ -std=c++17 -c player.cpp -o player.o
+clang++ -std=c++17 -c calculator.cpp -o calculator.o
+clang++ -std=c++17 -c operator.cpp -o operator.o
+clang++ -std=c++17 -o gostop  gostop.cpp operator.o calculator.o player.o card.o
+```
+
+### 실행방법
+```bash
+./gostop
+```
