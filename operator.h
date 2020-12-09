@@ -11,7 +11,9 @@
 class Operator {
  public:
   void setGame(std::vector<Card*>& cardList, std::vector<Player*>& playerList, std::vector<Card*>& fieldCard); // 첫 게임 셋팅을 위한 함수
-  bool validateCard(std::vector<Card*>& cardList, std::vector<Player*>& playerList, Card* card, Player* player); // 플레이어가 카드를 정상적으로 냈는지 검사하는 함수
+  void playerDraw(std::vector<Card*>& cardList, Player* Player); // 플레이어가 카드를 드로우 하는 행동
+  void openCard(std::vector<Card*>& cardList, std::vector<Card*>& fieldCard); // 카드 덱에서 하나를 필드로 까는 행동
+  void giveCardTo(Player* Player, Card* card); // 플레이어에게 카드를 주는 함수
   bool isGameOver(std::vector<Player*>& playerList); // 게임이 종료됬는지 구하는 함수
  private:
   static Operator* instance_; // Operator instance, instance함수로 만들기

@@ -20,9 +20,6 @@ void Operator::setGame(std::vector<Card*>& cardList,  std::vector<Player*>& play
     }
   }
 }
-bool Operator::validateCard(std::vector<Card*>& cardList, std::vector<Player*>& playerList, Card* card, Player* player) {
-  return true;
-}
 
 bool Operator::isGameOver(std::vector<Player*>& playerList) {
   int countPlayer = 0;

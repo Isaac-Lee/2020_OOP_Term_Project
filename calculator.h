@@ -9,8 +9,7 @@
 
 class Calculator {
  public:
-  void isRoundOver(std::vector<Player*> playerList);    // 한 라운드마다 승리인지 판별하는 함수
-  void calculateScore(std::vector<Player*> playerList, int goCount); // 점수를 계산하는 함수
+  void calculateScore(std::vector<Player*> &playerList); // 점수를 계산하는 함수
  private:
   static Calculator* instanse_; // Operator instance, instance함수로 만들기
 };
