@@ -17,7 +17,6 @@ CardInfo Card::getCardInfo() {
   return card_info;
 }
 
-void Card::toString(int i) {
-  std::cout << i << ". " << this->name_ << std::endl;
-  std::cout << "디버깅" << std::endl;
+std::string Card::toString(int i) {
+  return std::to_string(i) + ". " + this->name_;
 }

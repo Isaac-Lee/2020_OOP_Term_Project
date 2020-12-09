@@ -10,9 +10,9 @@
 
 class Operator {
  public:
-  void setGame(std::vector<Card*> cardList, std::vector<Player*> playerList, std::vector<Card*> fieldCard); // 첫 게임 셋팅을 위한 함수
-  bool validateCard(std::vector<Card*> cardList, std::vector<Player*> playerList, Card* card, Player* player); // 플레이어가 카드를 정상적으로 냈는지 검사하는 함수
-  void isGameOver(std::vector<Player*> playerList); // 게임이 종료됬는지 구하는 함수
+  void setGame(std::vector<Card*>& cardList, std::vector<Player*>& playerList, std::vector<Card*>& fieldCard); // 첫 게임 셋팅을 위한 함수
+  bool validateCard(std::vector<Card*>& cardList, std::vector<Player*>& playerList, Card* card, Player* player); // 플레이어가 카드를 정상적으로 냈는지 검사하는 함수
+  bool isGameOver(std::vector<Player*>& playerList); // 게임이 종료됬는지 구하는 함수
  private:
   static Operator* instance_; // Operator instance, instance함수로 만들기
 };

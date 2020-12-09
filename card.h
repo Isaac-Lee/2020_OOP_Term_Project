@@ -9,7 +9,7 @@ class Card {
  public:
   Card(std::string name, bool gwang, bool yeolkkeut, bool godori, int pi, std::string _tti);
   CardInfo getCardInfo();    // 카드의 정보(id를 제외한 모든 필드)를 구조체 형태로 반환
-  void toString(int i);    // 카드의 이름을 공백 기준으로 구분한 문자열을 반환
+  std::string toString(int i);    // 카드의 이름을 공백 기준으로 구분한 문자열을 반환
  private:
   bool gwang_;               // 광인지 아닌지
   bool yeolkkeut_;           // 열끗인지 아닌지
