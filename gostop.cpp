@@ -80,6 +80,24 @@ void initCard(std::string path, std::vector<Card*> &cardlist, bool debug) {
     readFile.close(); //파일 닫아줍니다.
   }
 }
+void initPlayer(std::vector<Player*> &playerList) {
+  for (int i = 0; i < 3; i++) {
+    std::string name;
+    std::cout << i+1 << "번째 플레이어의 이름을 입력하세요: ";
+    std::cin >> name;
+    if (name.length() >= 10) {
+      std::cout << "이름이 너무 깁니다. 다시 입력해주세요." <<std::endl;
+      i--;
+    }
+    Player* p = new Player(name);
+    playerList.push_back(p);
+  }
+  for (int i = 0; i < 3; i++) {
+    PlayerInfo p_info = playerList[i]->GetPlayerInfo();
+    std::cout << i << "번째 플레이어 : " << p_info.name_ << std::endl;
+  }
+}
+
 
 void startGame() {
   std::cout << std::endl;
@@ -88,14 +106,7 @@ void startGame() {
   std::cout << std::endl;
   std::cout << std::endl;
 } 
-int goOrStop() {
-  int choice;
-  std::cout << "******  1. 못먹어도 고! / 2. 욕심은 금물 스톱!  ******" <<std::endl;
-  std::cout << "선택 : ";
-  std::cin >> choice;
-  return choice;
-}
-int pickCard(Player &player) {
+int pickHandCard(Player &player) {
   PlayerInfo info = player.GetPlayerInfo();
   std::vector<Card*> hand = info.hand_;
   for (int i = 0; i < hand.size(); i++) {
@@ -104,6 +115,14 @@ int pickCard(Player &player) {
   return 0;
 }
 
+void showField(std::vector<Card*> &fieldCard) {
+  std::cout << std::endl;
+  std::cout << "판에 깔려있는 카드" << std::endl;
+  for (int i = 0; i < 6; i++) {
+    std::cout << fieldCard[i]->toString(i+1) << std::endl;
+  }
+  std::cout << std::endl;
+}
 // TODO
 // 게임 시작 세팅을 해주는 함수
 // 게임 규칙대로 플레이어가 카드를 내는지 확인
@@ -122,12 +141,22 @@ int main(void)
 {
   std::vector<Card*> cardList; // 카드 리스트
   std::vector<Card*> fieldCard; //바닥 카드 리스트 -> 시작에 6장
-  std::vector<Player*> plaerList; // 플레이어 리스트 -> 3명
+  std::vector<Player*> playerList; // 플레이어 리스트 -> 3명
   Operator gameOP;
   Calculator gameCal;
 
-  startGame();
   initCard("card.txt", cardList, false);
+  initPlayer(playerList);
+  // for (int i = 0; i < 3; i++) {
+  //   PlayerInfo p_info = playerList[i]->GetPlayerInfo();
+  //   std::cout << p_info.name_ << std::endl;
+  // }
+  startGame();
+  gameOP.setGame(cardList, playerList, fieldCard);
+  showField(fieldCard);
+
+  
+
   
   // 처음 판을 깔기
   // 플레이어 1부터 한명씩 돌아가면서 정보 입력 받기
