@@ -88,13 +88,14 @@ void initPlayer(std::vector<Player*> &playerList) {
     if (name.length() >= 10) {
       std::cout << "이름이 너무 깁니다. 다시 입력해주세요." <<std::endl;
       i--;
+      continue;
     }
     Player* p = new Player(name);
     playerList.push_back(p);
   }
   for (int i = 0; i < 3; i++) {
     PlayerInfo p_info = playerList[i]->GetPlayerInfo();
-    std::cout << i << "번째 플레이어 : " << p_info.name_ << std::endl;
+    std::cout << i+1 << "번째 플레이어 : " << p_info.name_ << std::endl;
   }
 }
 
@@ -106,13 +107,25 @@ void startGame() {
   std::cout << std::endl;
   std::cout << std::endl;
 } 
-int pickHandCard(Player &player) {
-  PlayerInfo info = player.GetPlayerInfo();
-  std::vector<Card*> hand = info.hand_;
-  for (int i = 0; i < hand.size(); i++) {
-    hand[i]->toString(i+1);
-  }
-  return 0;
+void showHand(Player* player) {
+  PlayerInfo info = player->GetPlayerInfo();
+    std::cout << info.name_ << "님의 손 패 입니다." << std::endl;
+    std::vector<Card*> hand = info.hand_;
+    for (int j = 0; j < hand.size(); j++) {
+      std::cout << hand[j]->toString(j+1) << std::endl;
+    }
+    std::cout << std::endl;
+}
+Card* pickHandCard(Player* player) {
+  showHand(player);
+  int cardNumber;
+  std::cout << "카드 번호를 입력하세요 : ";
+  std::cin >> cardNumber;
+
+  Card* card;
+  card = player->drop(cardNumber);
+  std::cout << card->toString(cardNumber) << "를 냈습니다." << std::endl;
+  return card;
 }
 
 void showField(std::vector<Card*> &fieldCard) {
@@ -153,13 +166,28 @@ int main(void)
   // }
   startGame();
   gameOP.setGame(cardList, playerList, fieldCard);
-  showField(fieldCard);
 
+  bool isPlaying = true;
+  while(isPlaying) {
+    for (int i = 0; i < 3; i++) {
+      Player *p = playerList[i];
+      PlayerInfo p_info = p->GetPlayerInfo();
+      std::cout << p_info.name_ << "님 차례입니다." << std::endl;
+      showField(fieldCard);
+      Card* cardPick = pickHandCard(p);
+      std::string isTurnOff;
+      std::cout << "턴을 넘기시겠습니까? [Y/n] : ";
+      std::cin >> isTurnOff;
+      if (isTurnOff.compare("n") == 0) {
+        i--;
+        continue;
+      } else {
+        continue;
+      }
+    }
+    gameOP.isGameOver(playerList);
+  }
   
-
-  
-  // 처음 판을 깔기
-  // 플레이어 1부터 한명씩 돌아가면서 정보 입력 받기
   // 한턴마다 돌아다가면서 카드를 내고, 카드더미에서 한장 뒤집는다
   // 두 카드중에 바닥에 깔려있는것과 같은 종류가 있다면 그 두장을 거둔다
   // 점수 계산
