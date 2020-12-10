@@ -80,6 +80,25 @@ void initCard(std::string path, std::vector<Card*> &cardlist, bool debug) {
     readFile.close(); //파일 닫아줍니다.
   }
 }
+void initPlayer(std::vector<Player*> &playerList) {
+  for (int i = 0; i < 3; i++) {
+    std::string name;
+    std::cout << i+1 << "번째 플레이어의 이름을 입력하세요: ";
+    std::cin >> name;
+    if (name.length() >= 10) {
+      std::cout << "이름이 너무 깁니다. 다시 입력해주세요." <<std::endl;
+      i--;
+      continue;
+    }
+    Player* p = new Player(name);
+    playerList.push_back(p);
+  }
+  for (int i = 0; i < 3; i++) {
+    PlayerInfo p_info = playerList[i]->GetPlayerInfo();
+    std::cout << i+1 << "번째 플레이어 : " << p_info.name_ << std::endl;
+  }
+}
+
 
 void startGame() {
   std::cout << std::endl;
@@ -88,57 +107,69 @@ void startGame() {
   std::cout << std::endl;
   std::cout << std::endl;
 } 
-int goOrStop() {
-  int choice;
-  std::cout << "******  1. 못먹어도 고! / 2. 욕심은 금물 스톱!  ******" <<std::endl;
-  std::cout << "선택 : ";
-  std::cin >> choice;
-  return choice;
+void showHand(Player* player) {
+  PlayerInfo info = player->GetPlayerInfo();
+    std::cout << info.name_ << "님의 손 패 입니다." << std::endl;
+    std::vector<Card*> hand = info.hand_;
+    for (int j = 0; j < hand.size(); j++) {
+      std::cout << hand[j]->toString(j+1) << std::endl;
+    }
+    std::cout << std::endl;
 }
-int pickCard(Player &player) {
-  PlayerInfo info = player.GetPlayerInfo();
-  std::vector<Card*> hand = info.hand_;
-  for (int i = 0; i < hand.size(); i++) {
-    hand[i]->toString(i+1);
+Card* pickHandCard(Player* player) {
+  showHand(player);
+  int cardNumber;
+  std::cout << "카드 번호를 입력하세요 : ";
+  std::cin >> cardNumber;
+
+  Card* card;
+  card = player->drop(cardNumber);
+  std::cout << card->toString(cardNumber) << "를 냈습니다." << std::endl;
+  return card;
+}
+void showField(std::vector<Card*> &fieldCard) {
+  std::cout << std::endl;
+  std::cout << "판에 깔려있는 카드" << std::endl;
+  for (int i = 0; i < 6; i++) {
+    std::cout << fieldCard[i]->toString(i+1) << std::endl;
   }
-  return 0;
+  std::cout << std::endl;
 }
 
-// TODO
-// 게임 시작 세팅을 해주는 함수
-// 게임 규칙대로 플레이어가 카드를 내는지 확인
-// 카드를 냈을때 일어나는 일들 구현하는 함수
-// 게임의 종료를 구하는 함수
-
-// 승리 판별기
-// 점수 계산하는 함수 만들어야함
-// 돈 계산 해주는 함수 - 승자의 점수를 따라 돈 계산
-// 플레이어 탈주시 갖고 있는 돈을 다른 플레이어에게 나눠주는 함수
-
-// 고랑 스톱이 가능한지 출력하는 함수
-// 게임 진행시 진행상황을 사용자에게 보여주는 함수
 
 int main(void)
 {
   std::vector<Card*> cardList; // 카드 리스트
   std::vector<Card*> fieldCard; //바닥 카드 리스트 -> 시작에 6장
-  std::vector<Player*> plaerList; // 플레이어 리스트 -> 3명
-  Operator gameOP;
-  Calculator gameCal;
+  std::vector<Player*> playerList; // 플레이어 리스트 -> 3명
+  Operator gameOP; // 게임 진행자
+  Calculator gameCal; // 점수 계산기
 
-  startGame();
   initCard("card.txt", cardList, false);
-  
-  // 처음 판을 깔기
-  // 플레이어 1부터 한명씩 돌아가면서 정보 입력 받기
-  // 한턴마다 돌아다가면서 카드를 내고, 카드더미에서 한장 뒤집는다
-  // 두 카드중에 바닥에 깔려있는것과 같은 종류가 있다면 그 두장을 거둔다
-  // 점수 계산
-  // 이간 사람 있는지 판별
-  // 이긴 사람이 없다면 다시 진행
-  // 이긴 사람이 있다면 고할지 스톱할지 알려준다.
-  // 고라면 고 카운트를 센다.
-  // 스톱이라면 점수 계산하고 다시 진행
+  initPlayer(playerList);
+  startGame();
+  gameOP.setGame(cardList, playerList, fieldCard);
+
+  bool isPlaying = true;
+  while(isPlaying) {
+    for (int i = 0; i < 3; i++) {
+      Player *p = playerList[i];
+      PlayerInfo p_info = p->GetPlayerInfo();
+      std::cout << p_info.name_ << "님 차례입니다." << std::endl;
+      showField(fieldCard);
+      Card* cardPick = pickHandCard(p);
+      std::string isTurnOff;
+      std::cout << "턴을 넘기시겠습니까? [Y/n] : ";
+      std::cin >> isTurnOff;
+      if (isTurnOff.compare("n") == 0) {
+        i--;
+        continue;
+      } else {
+        continue;
+      }
+    }
+    gameOP.isGameOver(playerList);
+  }
 
   return 0;
 }
