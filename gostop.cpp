@@ -127,7 +127,6 @@ Card* pickHandCard(Player* player) {
   std::cout << card->toString(cardNumber) << "를 냈습니다." << std::endl;
   return card;
 }
-
 void showField(std::vector<Card*> &fieldCard) {
   std::cout << std::endl;
   std::cout << "판에 깔려있는 카드" << std::endl;
@@ -136,34 +135,18 @@ void showField(std::vector<Card*> &fieldCard) {
   }
   std::cout << std::endl;
 }
-// TODO
-// 게임 시작 세팅을 해주는 함수
-// 게임 규칙대로 플레이어가 카드를 내는지 확인
-// 카드를 냈을때 일어나는 일들 구현하는 함수
-// 게임의 종료를 구하는 함수
 
-// 승리 판별기
-// 점수 계산하는 함수 만들어야함
-// 돈 계산 해주는 함수 - 승자의 점수를 따라 돈 계산
-// 플레이어 탈주시 갖고 있는 돈을 다른 플레이어에게 나눠주는 함수
-
-// 고랑 스톱이 가능한지 출력하는 함수
-// 게임 진행시 진행상황을 사용자에게 보여주는 함수
 
 int main(void)
 {
   std::vector<Card*> cardList; // 카드 리스트
   std::vector<Card*> fieldCard; //바닥 카드 리스트 -> 시작에 6장
   std::vector<Player*> playerList; // 플레이어 리스트 -> 3명
-  Operator gameOP;
-  Calculator gameCal;
+  Operator gameOP; // 게임 진행자
+  Calculator gameCal; // 점수 계산기
 
   initCard("card.txt", cardList, false);
   initPlayer(playerList);
-  // for (int i = 0; i < 3; i++) {
-  //   PlayerInfo p_info = playerList[i]->GetPlayerInfo();
-  //   std::cout << p_info.name_ << std::endl;
-  // }
   startGame();
   gameOP.setGame(cardList, playerList, fieldCard);
 
@@ -187,15 +170,6 @@ int main(void)
     }
     gameOP.isGameOver(playerList);
   }
-  
-  // 한턴마다 돌아다가면서 카드를 내고, 카드더미에서 한장 뒤집는다
-  // 두 카드중에 바닥에 깔려있는것과 같은 종류가 있다면 그 두장을 거둔다
-  // 점수 계산
-  // 이간 사람 있는지 판별
-  // 이긴 사람이 없다면 다시 진행
-  // 이긴 사람이 있다면 고할지 스톱할지 알려준다.
-  // 고라면 고 카운트를 센다.
-  // 스톱이라면 점수 계산하고 다시 진행
 
   return 0;
 }
